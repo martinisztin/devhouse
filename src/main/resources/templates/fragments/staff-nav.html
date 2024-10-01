@@ -31,6 +31,9 @@
                     <li class="nav-item" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
                         <a th:href="@{/staff/manage-services}" class="nav-link">Szolgátatások</a>
                     </li>
+                    <li class="nav-item">
+                        <a th:href="@{/staff/change-password}" class="nav-link">Jelszóváltás</a>
+                    </li>
                     <li class="nav-item show-in-responsive">
                         <a href="/" class="nav-link">Városválasztó</a>
                     </li>

@@ -109,4 +109,9 @@ public class StaffController {
         model.addAttribute("service", service);
         return "staff/modify-service";
     }
+
+    @GetMapping("/change-password")
+    public String getChangePassword(Model model) {
+        return "staff/password-change";
+    }
 }

@@ -36,4 +36,18 @@ public class UserService {
     public boolean isUsernameTaken(String username) {
         return userRepository.findByUsername(username) != null;
     }
+
+    public User updatePassword(String username, String newPassword) {
+        User user = userRepository.findByUsername(username);
+
+        user.setPassword(bCryptPasswordEncoder.encode(newPassword));
+
+        return userRepository.save(user);
+    }
+
+    public boolean passwordMatchesWithDb(String username, String userInput) {
+        String psw = userRepository.findByUsername(username).getPassword();
+        System.out.println("input " + userInput + " jelszo " + psw);
+        return bCryptPasswordEncoder.matches(userInput, psw);
+    }
 }
