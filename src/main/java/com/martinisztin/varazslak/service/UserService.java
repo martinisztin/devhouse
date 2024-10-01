@@ -47,7 +47,7 @@ public class UserService {
 
     public boolean passwordMatchesWithDb(String username, String userInput) {
         String psw = userRepository.findByUsername(username).getPassword();
-        System.out.println("input " + userInput + " jelszo " + psw);
+        
         return bCryptPasswordEncoder.matches(userInput, psw);
     }
 }
