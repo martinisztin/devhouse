@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tájékozódj a Varázslak szolgáltatásairól">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <title>Varázslak Fejlesztőház - Kapcsolat</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+
+    <link rel="stylesheet" href="/css/services.css">
+
+</head>
+<body>
+<header th:replace="~{fragments/nav :: header(${city})}">
+</header>
+
+<main>
+    <section class="section-header">
+        <div class="container">
+            <h2>Kapcsolat</h2>
+            <p style="text-align: center">
+
+            </p>
+        </div>
+    </section>
+    <section class="section-body">
+        <div class="contact-section">
+            <h3>Cím</h3>
+            <p th:text="${address}"></p>
+            <hr>
+            <div class="container" th:utext="${forwardElement}"></div>
+            <hr>
+            <h3>Elérhetőségek</h3>
+            <div class="ce-container">
+                <div class="contact-element">
+                    <i class="bi bi-envelope"></i><span th:text="${email}"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

@@ -170,4 +170,31 @@ public class PageController {
         return "rooms";
     }
 
+    @GetMapping("/contact")
+    public String getContact(@PathVariable String city, Model model) {
+        String accentedCity = StringUtils.addKnownAccent(city);
+        String forwardElement = "", address = "", email = "";
+
+        // im so sorry people that see this
+        if (accentedCity.equals("Vác")) {
+            forwardElement = "<iframe width=\"100%\" height=\"400\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=V%C3%A1c,%20J%C3%B3kai%20M%C3%B3r%20u.%201,%202600+(Var%C3%A1zslak%20Fejleszt%C5%91h%C3%A1z)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>";
+            address = "2600, Vác, Jókai Mór u. 1";
+            email = "varazslakvac@gmail.com";
+        }
+        else if (accentedCity.equals("Szeged")) {
+            forwardElement = "<iframe width=\"100%\" height=\"400\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\" src=\"https://maps.google.com/maps?width=100%25&amp;height=400&amp;hl=en&amp;q=Szeged,%20Dugonics%20u.%2028,%206721+(Var%C3%A1zslak%20Fejleszt%C5%91h%C3%A1z)&amp;t=&amp;z=19&amp;ie=UTF8&amp;iwloc=B&amp;output=embed\"></iframe>";
+            address = "6721, Szeged, Dugonics u. 28";
+            email = "varazslakszeged@gmail.com";
+        }
+
+        model.addAttribute("city", accentedCity);
+        model.addAttribute("strippedCity", city);
+
+        model.addAttribute("email", email);
+        model.addAttribute("address", address);
+        model.addAttribute("forwardElement", forwardElement);
+
+        return "contact";
+    }
+
 }

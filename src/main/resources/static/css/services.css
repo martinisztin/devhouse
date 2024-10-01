@@ -45,6 +45,28 @@ span {
     flex-direction: column;
 }
 
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-weight: bold;
+}
+
+.ce-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-element {
+    background-color: #f4f4f4;
+    width: fit-content;
+    padding: 0 20px;
+    border-radius: 40px;
+}
+
 
 @media screen and (min-width: 1200px) {
     .card {
