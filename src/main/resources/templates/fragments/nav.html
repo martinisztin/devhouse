@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+<header class="header" th:fragment="header(city)">
+    <div class="header-container">
+        <div class="header-icon-title">
+            <a href="/">
+                <img src="/assets/varazslak_logo.png" alt="Varázslak Logo" class="logo">
+            </a>
+            <h1>Varázslak <span th:text="${city}"></span></h1>
+        </div>
+        <nav class="topnav navbar navbar-expand-lg" id="nav">
+            <div class="container">
+                <a href="javascript:void(0);" class="icon" onclick="openClose()">
+                    <i class="bi bi-list h1"></i>
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/'" class="nav-link">Főoldal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'about'" class="nav-link">Rólunk</a>
+                    </li>
+                    <li class="nav-item" th:if="${strippedCity == 'vac'}">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'rooms'" class="nav-link">Termeink</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'apply'" class="nav-link">Jelentkezés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'services'" class="nav-link">Szolgáltatások</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'rules'" class="nav-link">Házirend</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="'/' + ${strippedCity} + '/' + 'prices'" class="nav-link">Árak</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Kapcsolat</a>
+                    </li>
+                    <li class="nav-item show-in-responsive">
+                        <a href="/" class="nav-link">Városválasztó</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+
+
+<footer th:fragment="footer">
+    <div class="footer-content">
+        <div class="social-icons">
+            <a href="https://instagram.com/varazslakfejlesztohaz" target="_blank"><img src="/assets/instagram.png" alt="Instagram"></a>
+            <a th:href="${strippedCity == 'vac' ? 'https://www.facebook.com/varazslakvac' : (strippedCity == 'szeged' ? 'https://www.facebook.com/profile.php?id=61562859912428' : '#')}"><img src="/assets/facebook.png" alt="Facebook"></a>
+            <!--<a href="#"><img src="/assets/linkedin.png" alt="LinkedIn"></a> -->
+        </div>
+        <p>
+            &copy; 2024 Varázslak Fejlesztőház
+            <br>
+            <!--<a href="https://martinisztin.com">martinisztin</a>-->
+        </p>
+
+    </div>
+</footer>
+</body>
+</html>

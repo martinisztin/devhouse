@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varázslak Fejlesztőház - Vezérlőpult</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<header th:replace="~{fragments/staff-nav :: staffheader}">
+</header>
+
+<main>
+    <section class="main">
+        <div class="container">
+            <h2>Vezérlőpult</h2>
+            <p>Üdvözöllek,
+                <span th:text="${user.getLastName()} + ' ' + ${user.getFirstName()}"></span>
+            </p>
+            <p style="font-size: 0.875em; color: red;">
+                Ez a felület kizárólag a Varázslak szakemberei számára elérhető.
+                <br>
+                Az ezen oldalakon megjelenő adatokat kezeld bizalmasan.
+            </p>
+
+            <div class="row row-cols-2 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Jelentkezések</h5>
+                            <p class="text-wrap card-text">A szülők által benyújtott jelentkezések.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a th:href="'/staff/applications'" style="" class="btn btn-outline-primary">Tovább</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Szolgáltatások</h5>
+                            <p class="text-wrap card-text">A szolgáltatások szerkesztése.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a th:href="'/staff/manage-services'" style="" class="btn btn-outline-primary">Tovább</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col" th:if="${#authorization.expression('hasRole(''ADMIN'')')}">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Felhasználó hozzáadása</h5>
+                            <p class="text-wrap card-text">Új munkatárs hozzáadása a rendszerhez.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a th:href="'/staff/usergen'" style="" class="btn btn-outline-primary">Tovább</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Beállítások</h5>
+                            <p class="text-wrap card-text">A fiók beállításai.</p>
+                        </div>
+                        <div class="card-bottom">
+                            <a th:href="'/staff/settings'" style="" class="btn btn-outline-primary disabled">Tovább</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Városválasztó">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <title>Varázslak Fejlesztőház</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="container" style="">
+            <div class="bogo">
+                <img src="/assets/varazslak_logo.png" alt="Varázslak Logo" class="logo">
+                <h1>Varázslak Fejlesztőház</h1>
+            </div>
+            <div style="">
+                <a class="btn btn-thirdary" style="float:right;" href="/staff/">Tanári</a>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="content">
+            <h2>Hol érdekel téged a Varázslak varázsa?</h2>
+            <div class="locations">
+                <div class="location-card" onclick="goTo('vac')">
+                    <div class="pin"></div>
+                    Vác
+                </div>
+                <div class="location-card" onclick="goTo('szeged')">
+                    <div class="pin"></div>
+                    Szeged
+                </div>
+                <div class="location-card disabled" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Átalakítás alatt">
+                    <div class="pin"></div>
+                    Sződliget
+                </div>
+
+                <div class="rainbow-background"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer th:replace="~{fragments/nav :: footer}"></footer>
+</div>
+<script src="/js/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+<script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tájékozódj a Varázslak szolgáltatásainak áráról">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <title>Varázslak Fejlesztőház - Árak</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+
+    <link rel="stylesheet" href="/css/prices.css">
+
+</head>
+<body>
+<header th:replace="~{fragments/nav :: header(${city})}">
+</header>
+
+<main>
+    <section class="price-header">
+        <div class="container">
+            <h2>Árak</h2>
+
+        </div>
+    </section>
+    <section class="prices">
+        <table class="table table-sm table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>Foglalkozás</th>
+                    <th>Létszám</th>
+                    <th>Ft/fő/alkalom</th>
+                    <th>Időtartam</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <tr th:each="service: ${services}">
+                    <td th:text="${service.getName()}"></td>
+                    <td th:text="${service.getForm()}"></td>
+                    <td th:text="${service.getPrice()} + ' Ft'"></td>
+                    <td th:text="${service.getDuration()} + ' perc'"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

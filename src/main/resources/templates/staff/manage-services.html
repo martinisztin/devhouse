@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varázslak Fejlesztőház - Szolgáltatások kezelése</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<header th:replace="~{fragments/staff-nav :: staffheader}">
+</header>
+
+<main>
+    <section class="main">
+        <div class="container">
+            <h2>Szolgáltatások</h2>
+            <p style="font-size: 1em;">Egyes szolgátatások módosításához kattints a megfelelő sorban a módosítás gombra.</p>
+            <p style="font-size: 1em;">Ha keresni szeretnél, ajánlom a Ctrl+F billentyűkombinációt</p>
+        </div>
+    </section>
+    <section class="prices">
+        <h4 th:if="${services.isEmpty()}" style="text-align: center;">Nincs hozzáadott szolgátatások!</h4>
+        <table class="table table-sm table-striped table-hover" th:if="${!services.isEmpty()}">
+            <thead>
+            <tr>
+                <th>Azonosító</th>
+                <th>Szolgátatás neve</th>
+                <th>Szolgáltatás leírása</th>
+                <th>Forma</th>
+                <th>Életkor intervallum</th>
+                <th>Időtartam</th>
+                <th>Ár</th>
+                <th>Művelet</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr th:each="service: ${services}">
+                <td th:text="${service.getId()}"></td>
+                <td th:text="${service.getName()}"></td>
+                <td th:text="${service.getDescription()}"></td>
+                <td th:text="${service.getForm()}"></td>
+                <td th:text="${service.getAgeRange()}"></td>
+                <td th:text="${service.getDuration()} + ' perc'"></td>
+                <td th:text="${service.getPrice()} + ' Ft'"></td>
+                <td><a th:href="'/staff/manage-service/' + ${service.getId()}" class="btn btn-outline-primary">Módosítás</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

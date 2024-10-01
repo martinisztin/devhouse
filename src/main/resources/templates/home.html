@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Üdvözlünk a Varázslak Fejlesztőház főoldalán!">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <title>Varázslak Fejlesztőház</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+
+</head>
+<body>
+
+<header th:replace="~{fragments/nav :: header(${city})}"></header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Varázslak Fejlesztőház</h1>
+                <p>Elhivatott gyógypedagógusokból álló, fiatal és lendületes csapatunk kiemelt minőségű szolgáltatást nyújt a családok számára.</p>
+                <a th:href="'/' + ${strippedCity} + '/apply'" class="btn btn-outline-primary">Jelentkezés</a>
+            </div>
+            <div class="hero-image drop-shadow">
+                <img src="/assets/home/head-1.jpg" alt="Gyerekek">
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-image drop-shadow">
+                <img src="/assets/home/team.jpg" alt="Csapat kép">
+            </div>
+            <div class="about-text">
+                <h2>A Varázslak varázsa</h2>
+                <p>A Varázslak egy olyan hely, ahol a kicsiktől a nagyokig, mindenki megtalálja a számára legmegfelelőbb foglalkozásokat. Foglalkozásaink természetesen nem csak gyermekeknek vannak. Színesítjük a Fejlesztőház életét szülőklubbal is, ahol lehetőség van kapcsolatteremtésre, önismeret fejlesztésére és közös problémamegoldásra, ötletelésre.</p>
+                <p>Fontosnak tartjuk, hogy ne csak a gyermekre, hanem a szülőre és a gyermekkel foglalkozó pedagógusokra is koncentráljunk, hiszen közösen, egy csapatként tudjuk a legtöbbet megadni a gyerekeknek.</p>
+            </div>
+        </div>
+        <div class="rainbow-background"></div>
+    </section>
+
+    <section class="quote">
+        <div class="container">
+            <figure>
+                <blockquote class="blockquote">
+                    <p>
+                        Minden gyermekben megvan a cselekvési vágy és a világmindenség megismerésének igénye, csak annak kibontakoztatását kell elősegíteni.”
+                    </p>
+                    <figcaption class="blockquote-footer">
+                        Maria Montessori
+                    </figcaption>
+                </blockquote>
+            </figure>
+        </div>
+    </section>
+</main>
+
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+<script src="/js/nav.js"></script>
+</body>
+</html>

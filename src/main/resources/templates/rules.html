@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Tájékozódj a Varázslak házirendjéről">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <title>Varázslak Fejlesztőház - Házirend</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+
+    <link rel="stylesheet" href="/css/rules.css">
+
+</head>
+<body>
+<header th:replace="~{fragments/nav :: header(${city})}">
+</header>
+
+<main>
+    <section class="section-header">
+        <div class="container">
+            <h2>Házirend</h2>
+            <p>
+                Szeretnénk, hogy a közösségünk és a gyermekek fejlesztésének hatékonysága érdekében néhány dologra mindannyian kiemelt figyelmet fordítanánk.
+            </p>
+        </div>
+    </section>
+    <section class="section-body">
+            <div class="container">
+                <h3>Az érkezés</h3>
+                <p>
+                    Időben (5 perccel a foglalkozás kezdete előtt) történjen. Késés esetén az órákat nem tudjuk tovább tartani, illetve ebben az esetben a fejlesztés eredményességét nem tudjuk garantálni.
+                </p>
+
+                <h3>Szünetek</h3>
+                <p>
+                    A foglalkozások között rövid szünet van, így kérjük a gyermekekért minden esetben pontosan érkezzen. Ha mást bízna meg a gyermek hazavitelével, kérjük előre jelezze munkatársunknak.
+                </p>
+
+                <h3>Időtartam</h3>
+                <p>
+                    A foglalkozások szeptembertől június közepéig tartanak, az iskolai szünetekben és ünnepnapokon pedig mi is pihenünk.
+                </p>
+
+                <h3>Felszerelés</h3>
+                <p>
+                    Kényelmes ruha, innivaló (zárható palackban).
+                </p>
+
+                <h3>Bérletvásárlás</h3>
+                <p>
+                    A megvásárolt bérletek 4 alkalomra szólnak és 4 hétig érvényesek. Fizetés történhet készpénzben illetve utalással, minden esetben a foglalkozásvezetővel egyeztetve.
+                </p>
+
+                <h3>Lemondás</h3>
+                <p>
+                    A foglalkozás lemondása minden esetben írásban (sms, email), legalább 24 órával a foglalkozás kezdete előtt lehetséges. 24 órán belüli lemondás esetén az alkalom nem pótolható, levonásra kerül.
+                </p>
+
+                <h3>Pótlás</h3>
+                <p>
+                    Az időben lemondott és elmaradt alkalom egyéni egyeztetés útján pótolható.
+                </p>
+
+                <h3>Különleges helyzetek</h3>
+                <p>
+                    Amennyiben a Varázslak munkatársai részéről kerül lemondásra egy foglalkozás, pótlási lehetőséget ajánlunk fel vagy jóváírjuk a korábban befizetett összeget a következő havi bérletből.
+                </p>
+
+                <p>
+                    A fenti pontok alól kivételt képez bármilyen jellegű betegség, orvosi igazolás bemutatását követően. Betegség esetén a Fejlesztőház nem látogatható. Kérjük ennek figyelembevételét a többi gyermek és munkatársaink érdekében.
+                </p>
+
+                <h3>Adatvédelem</h3>
+                <p>
+                    A fejlesztések során kezelt személyes adatokkal kapcsolatos Adatvédelmi Tájékoztató papír alapon elérhető a fejlesztőházban. Elektronikusan pedig a fejlesztőtől elkérhető.
+                </p>
+
+                <h3>Záró rendelkezések</h3>
+                <p>
+                    A foglalkozáson való részvétellel és a bérlet megvásárlásával a Szülő automatikusan elfogadja a fent írt pontokat.
+                </p>
+
+                <p class="thanks">Köszönjük együttműködésüket!</p>
+            </div>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

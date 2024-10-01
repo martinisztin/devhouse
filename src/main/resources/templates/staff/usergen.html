@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varázslak Staff - Felhasználó létrehozás</title>
+
+  <link rel="icon" href="/assets/varazslak_logo.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container" style="">
+    <img src="/assets/varazslak_logo.png" alt="Varázslak Logo" class="logo">
+    <h1>Varázslak Fejlesztőház</h1>
+  </div>
+
+</header>
+<div class="filler">
+  <section class="registration-form">
+    <div class="container" id="apply-form">
+      <h1>Új munkatárs</h1>
+      <p>Milyen felhasználónevet írjak be?</p>
+      <span>Érdemes egyszerű és megjegyezhető felhasználónevet adni.</span>
+      <br>
+      <br>
+      <span>Példa: Valami János - <span class="small">valamij</span></span>
+      <br>
+      <br>
+      <div class="alert alert-danger" th:if="${danger}"
+           th:utext="${danger}">
+      </div>
+      <div class="alert alert-success" th:if="${success}"
+           th:utext="'Sikeresen létrehoztad ' + ${uname} + ' fiókját. Ideiglenes jelszava: <strong>' + ${success} + '</strong>.<br> Ameddig nem mentetted el ezt a jelszót NE zárd be / frissítsd az oldalt.'">
+      </div>
+      <form th:action="@{/generate-user}" method="post">
+        <div>
+          <input class="form-control" type="text" name="username" placeholder="Felhasználónév"/>
+          <input class="form-control" type="text" name="lastName" placeholder="Vezetéknév"/>
+          <input class="form-control" type="text" name="firstName" placeholder="Keresztnév"/>
+        </div>
+        <input class="btn btn-outline-primary" type="submit" value="Létrehozás" />
+        <a href="/" class="btn btn-outline-secondary">Vissza a főoldalra</a>
+      </form>
+    </div>
+  </section>
+</div>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

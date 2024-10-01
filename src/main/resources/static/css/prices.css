@@ -1,0 +1,56 @@
+.price-header {
+    text-align: center;
+    padding: 40px;
+}
+
+table {
+    max-width: 900px;
+}
+
+table {
+
+}
+
+.prices {
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.rooms {
+    background-color: #fff;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 800px) {
+    .rooms {
+        width: 100%;
+
+    }
+}
+
+.carousel img {
+    max-height: 50%;
+}
+
+.big-padding {
+    padding: 4em;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}

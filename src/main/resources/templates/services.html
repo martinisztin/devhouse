@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Tájékozódj a Varázslak szolgáltatásairól">
+  <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+  <meta name="author" content="Varázslak Fejlesztőház">
+
+  <title>Varázslak Fejlesztőház - Szolgáltatások</title>
+
+  <link rel="icon" href="/assets/varazslak_logo.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/header.css">
+
+  <link rel="stylesheet" href="/css/services.css">
+
+</head>
+<body>
+<header th:replace="~{fragments/nav :: header(${city})}">
+</header>
+
+<main>
+  <section class="section-header">
+    <div class="container">
+      <h2>Szolgátatások</h2>
+      <p style="text-align: center">
+        Az adott szolgátatás kiválasztása a jelentkezési űrlap kitöltésekor esedékes.
+        További információkért látogass el az <a th:href="'/' + ${strippedCity} + '/prices'">árak</a> menüpontba.
+      </p>
+      </div>
+  </section>
+  <section class="section-body">
+      <div class="card-container">
+        <div class="card text-bg-light mb-3" style="max-width: 1200px;" th:each="service: ${services}">
+          <!--<div class="card-header" th:text="${service.getName()}"></div> -->
+          <div class="card-body">
+            <h5 class="card-title" th:text="${service.getName()}"></h5>
+            <p class="card-text" th:utext="${service.getDescription().replace('\n', '<br>')}"></p>
+            <hr>
+            <div th:if="${!service.getForm().isEmpty()}">
+              <!-- <i class="bi bi-people"></i><span class="card-text" th:text="${service.getForm()}"></span>
+              <br>
+              <i class="bi bi-calendar-range"></i><span class="card-text" th:text="'életkor: ' + ${service.getAgeRange()}"></span>
+              <br> -->
+              <i class="bi bi-clock"></i><span class="card-text" th:text="${service.getDuration()} + ' perc'"></span>
+              <span th:if="${service.getName().contains('Alapozó')}" th:text="'heti 2 alkalommal'"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

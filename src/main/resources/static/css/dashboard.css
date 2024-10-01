@@ -1,0 +1,38 @@
+.main {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.main p, .main span {
+    font-size: 24px;
+}
+
+.main span {
+    color: #ff5a4a;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1em !important;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card-bottom {
+    padding: 20px;
+}
+
+.prices {
+    padding: 40px;
+}
+
+table {
+    text-align: center;
+}
+
+@media screen and (max-width: 576px) {
+    .prices {
+        max-width: 500px;
+        overflow-x: scroll;
+    }
+}

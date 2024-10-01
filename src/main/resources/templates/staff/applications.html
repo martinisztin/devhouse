@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varázslak Fejlesztőház - Jelentkezések</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<header th:replace="~{fragments/staff-nav :: staffheader}">
+</header>
+
+<main>
+    <section class="main">
+        <div class="container">
+            <h2>Jelentkezések</h2>
+            <p style="font-size: 1em;">Itt találod a lezáratlan jelentkezéseket. A lezártak megtekintéséért kattints <a href="/staff/resolved-applications">ide</a>.</p>
+            <p style="font-size: 1em;">Ha keresni szeretnél, ajánlom a Ctrl+F billentyűkombinációt</p>
+        </div>
+    </section>
+    <section class="prices">
+        <h4 th:if="${applications.isEmpty()}" style="text-align: center;">Jelenleg nincs feldolgozatlan jelentkezés!</h4>
+        <table class="table table-sm table-striped table-hover" th:if="${!applications.isEmpty()}">
+            <thead>
+            <tr>
+                <th>Azonosító</th>
+                <th>Szülő név</th>
+                <th>Szülő email</th>
+                <th>Szülő telefon</th>
+                <th>Szolgátatás</th>
+                <th>Gyermek név</th>
+                <th>Gyermek életkor</th>
+                <th>További információk</th>
+                <th>Fizetendő összeg</th>
+                <th>Művelet</th>
+            </tr>
+            </thead>
+            <tbody class="table-group-divider">
+            <tr th:each="apply: ${applications}">
+                <td th:text="${apply.getId()}"></td>
+                <td th:text="${apply.getParentName()}"></td>
+                <td th:text="${apply.getParentEmail()}"></td>
+                <td th:text="${apply.getParentPhone()}"></td>
+                <td th:text="${apply.getService().getName() + ' (' + apply.getService().getForm() + ')'}"></td>
+                <td th:text="${apply.getChildName()}"></td>
+                <td th:text="${apply.getChildAge()} + ' év'"></td>
+                <td th:text="${apply.getAdditionalInfo()}"></td>
+                <td th:text="${apply.getService().getPrice()} + ' Ft'"></td>
+                <td><a th:href="'/staff/resolve/' + ${apply.getId()}" class="btn btn-outline-primary">Lezárás</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>

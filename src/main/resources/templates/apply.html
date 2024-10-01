@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varázslak Fejlesztőház - Jelentkezés</title>
+
+    <link rel="icon" href="/assets/varazslak_logo.png">
+
+    <meta name="description" content="Jelentkezz hozzánk foglalkozásra!">
+    <meta name="keywords" content="varázslak, varazslak, fejlesztohaz, fejlesztőház, szakemberek, gyógypedagógia, varázslak fejlesztőház, varazslak fejlesztohaz">
+    <meta name="author" content="Varázslak Fejlesztőház">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/apply.css">
+</head>
+<body>
+<header th:replace="~{fragments/nav :: header(${city})}">
+</header>
+
+<main>
+    <section class="instructions">
+        <div class="container">
+            <p>A foglalkozásokra való jelentkezés az alábbi űrlap kitöltésével lehetséges. Kérjük válaszoljanak a következő kérdésekre, munkatársunk pedig felveszi majd Önökkel a kapcsolatot további egyeztetés céljából.</p>
+            <a href="#apply-form" class="btn btn-outline-primary">Irány az űrlap!</a>
+        </div>
+    </section>
+
+    <section class="registration-form">
+        <div class="container" id="apply-form">
+            <h2>Jelentkezés</h2>
+            <p>Reméljük hamarosan találkozunk!</p>
+            <form action="/apply" th:object="${applyForm}" method="post">
+                <label for="city">Város</label>
+                <input class="form-control" type="text" id="city" name="city" th:value="${city}" th:field="*{city}" readonly required>
+
+                <label for="parent-name">Szülő neve</label>
+                <input class="form-control" type="text" id="parent-name" name="parent-name" th:field="*{parentName}" placeholder="Szülő neve" required>
+
+                <label for="email">Szülő elérhetősége (e-mail)</label>
+                <input class="form-control" type="email" id="email" name="email" th:field="*{parentEmail}" placeholder="email@cim.hu" required>
+
+                <label for="phone">Szülő elérhetősége (telefonszám)</label>
+                <input class="form-control" type="tel" id="phone" name="phone" th:field="*{parentPhone}" placeholder="+36000000000" required>
+
+                <label for="session-type">Foglalkozás típusa</label>
+                <select class="form-select" id="session-type" name="session-type" th:field="*{service}" required>
+                    <option value="0">-</option>
+                    <option th:each="service: ${services}" th:value="${service.getId()}" th:text="${service.getName()} + ' (' + ${service.getForm()} + ')'"></option>
+                </select>
+
+                <label for="child-name">Gyermek neve</label>
+                <input class="form-control" type="text" id="child-name" name="child-name" th:field="*{childName}" placeholder="Gyermek neve" required>
+
+                <label for="child-age">Gyermek életkora</label>
+                <input class="form-control" type="number" id="child-age" name="child-age" th:field="*{childAge}" placeholder="Gyermek életkora" required>
+
+                <label for="comments">Egyéb megjegyzés, fontos tudnivaló</label>
+                <textarea class="form-control" id="comments" name="comments" th:field="*{additionalInfo}" placeholder="Egyéb megjegyzés, fontos tudnivaló" rows="4"></textarea>
+
+                <button type="submit" class="btn btn-outline-primary">Küldés</button>
+            </form>
+        </div>
+    </section>
+</main>
+<script src="/js/nav.js"></script>
+<footer th:replace="~{fragments/nav :: footer}"></footer>
+</body>
+</html>
