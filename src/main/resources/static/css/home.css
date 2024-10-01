@@ -1,0 +1,198 @@
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+}
+
+/*
+.navbar ul li a:hover {
+    text-decoration: underline;
+}*/
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+/* Hero Section */
+.hero {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: url("../../assets/home/repeat_bg_tp.jpg") repeat;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10em;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    color: #6c7ae0;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.hero-image {
+    max-width: 400px;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+/* About Section */
+.about {
+    box-shadow: 0 0 15px -4px rgba(0, 0, 0, 0.8);
+    background-color: #f9f9f9;
+    padding: 40px 0;
+    position: relative;
+}
+
+.about .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.drop-shadow {
+    filter: drop-shadow(0rem 0.1rem 0.5rem black);
+}
+
+.btn {
+    width: 200px;
+    font-size: 1.3em;
+}
+
+.about-text {
+    max-width: 600px;
+}
+
+.about-text h2 {
+    color: #6c7ae0;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.rainbow-background {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 570px;
+    height: 300px;
+    background: url('../../assets/randomszivarvany.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Quote Section */
+.quote {
+    padding: 20px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.quote blockquote {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #555;
+    margin: 0;
+}
+
+/* Footer */
+
+/* Responsive Design */
+
+@media screen and (max-width: 1366px) {
+    .hero-image {
+        width: 340px;
+    }
+    .about-image {
+        width: 340px;
+    }
+}
+
+
+@media screen and (max-width: 1270px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .about .container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .rainbow-background {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2em;
+    }
+
+    .about-text h2 {
+        font-size: 1.8em;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+}

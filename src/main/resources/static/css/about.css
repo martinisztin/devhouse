@@ -1,0 +1,172 @@
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.row-cols-1 > * {
+    flex: 0 auto;
+}
+
+/* Team Section */
+.team {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.team h2 {
+    color: #6c7ae0;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.team p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.team-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-image-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.team-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.team-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); /* Adjust to fit inside the card */
+}
+
+/* Footer */
+
+.card {
+    max-width: 500px;
+}
+
+.btn {
+    width: 300px;
+}
+
+
+.card img {
+    max-width: 400px;
+}
+
+.card {
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.card-body {
+    height: 150px;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .team-card {
+        width: calc(50% - 20px);
+    }
+    .card-text {
+        max-height: 3em; /* Limit the height to 2 lines */
+        overflow: clip; /* Hide overflow */
+        white-space: nowrap;
+        text-overflow: clip; /* Add "..." for overflowed text */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-card {
+        width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team h2 {
+        font-size: 2em;
+    }
+
+    .team p {
+        font-size: 1em;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+
+    .cta-button {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .btn {
+        width: 100px;
+    }
+    .card-text {
+        font-size: 0.3em;
+    }
+}

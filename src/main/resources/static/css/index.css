@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'Dosis';
+    src: url("/assets/fonts/Dosis-SemiBold.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+    position: relative;
+    background-color: #6c7ae0;
+    padding: 20px 0;
+    color: white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.bogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.logo {
+    width: 60px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin: 0;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width:100%;
+    margin-top: 10vh ;
+}
+
+.content h2 {
+    color: #6c7ae0;
+    font-size: 2em;
+    margin-bottom: 30px;
+    margin-bottom: 6vh;
+}
+
+.locations {
+    display: flex;
+    justify-content: center;
+
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    /*height: 100px;*/
+    text-align: center;
+    font-size: 1.7em;
+    color: #ff5a4a;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.location-card:hover {
+    transform: translateY(-5px);
+}
+
+.pin {
+    width: 30px;
+    height: 30px;
+
+    background: url("/assets/pin.png") no-repeat center center;
+    background-size: contain;
+}
+
+.rainbow-background {
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    right: 0;
+    width: 1000px; /* Adjust size as needed */
+    height: 600px;
+    background: url('/assets/randomszivarvany.png') no-repeat center center;
+    background-size: contain;
+    z-index: -1; /* Ensures the rainbow is behind the text and cards */
+}
+
+footer {
+    padding-top: 20px;
+    background-color: #f4f4f4;
+    text-align: center !important;
+}
+
+.footer-content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 24px; /* Adjust size as needed */
+}
+
+footer p {
+    color: #555;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #555;
+    font-size: 0.7em;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .locations {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /*.location-card {
+        width: 80%;
+    }*/
+
+    .rainbow-background {
+        /*width: 100px;
+        height: 100px;*/
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .content h2 {
+        font-size: 1.6em;
+        padding: 0 40px;
+    }
+
+    .location-card {
+        /*width: 100%;*/
+        font-size: 1.4em;
+    }
+
+    .footer-content {
+        width: 100%;
+    }
+
+    .content {
+        margin-bottom: 40px;
+    }
+}
+

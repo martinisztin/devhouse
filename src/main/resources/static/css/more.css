@@ -1,0 +1,123 @@
+/* Basic Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+}
+
+/* Team Member Detail Section */
+.team-member-detail {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.team-member-content {
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 64px;
+}
+
+.team-member-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.team-member-text {
+    max-width: 600px;
+}
+
+.team-member-text h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 0.4rem;
+}
+
+.team-member-text p {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Call to Action Section */
+.cta-section {
+    padding: 40px 0;
+    text-align: center;
+    background: url("/assets/home/repeat_bg_tp.jpg") repeat;
+    box-shadow: 0 0 15px -4px rgba(0, 0, 0, 0.8);
+}
+
+.cta-section p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.cta-section .btn {
+    font-size: 1.2em;
+} 
+
+.cta-button, .back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+.cta-button {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.back-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+/* Footer */
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .team-member-content {
+        text-align: center;
+    }
+
+    .team-member-text h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-member-text {
+        max-width: 100%;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .team-member-text h2 {
+        font-size: 1.5em;
+    }
+
+    .cta-section p {
+        font-size: 1.2em;
+    }
+
+    .cta-button, .back-button {
+        font-size: 1em;
+    }
+
+    .navbar ul {
+        gap: 5px;
+    }
+}
